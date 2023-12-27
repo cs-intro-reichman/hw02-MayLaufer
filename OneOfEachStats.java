@@ -16,16 +16,6 @@ public class OneOfEachStats {
         Random generator = new Random(seed);  
 		double probabilty = generator.nextDouble();
 		
-		//// In the previous version of this program, you used a statement like:
-		//// double rnd = Math.random();
-		//// Where "rnd" is the variable that stores the generated random value.
-		//// In this version of the program, replace this statement with:
-		//// double rnd = generator.nextDouble();
-		//// This statement will generate a random value in the range [0,1),
-		//// just like you had in the previous version, except that the 
-		//// randomization will be based on the given seed.
-		//// This is the only change that you have to do in the program.
-		
 		double totalChildren = 0.0; // To calculate the avg later
 		
 		int twoChildrenFamilies = 0;
@@ -39,7 +29,7 @@ public class OneOfEachStats {
 			
 		for (int i = 0; i < T; i++) {
 		
-			if (probabilty >= 0.5) {
+			if (probabilty > 0.5) {
 				isGirl = true;
 			} else {
 				isGirl = false;
@@ -51,7 +41,7 @@ public class OneOfEachStats {
 			
 				probabilty = Math.random();
 			
-				if (probabilty >= 0.5) {
+				if (probabilty > 0.5) {
 					isGirl = true;
 				} else {
 					isGirl = false;
