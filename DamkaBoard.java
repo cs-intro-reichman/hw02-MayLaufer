@@ -7,17 +7,15 @@ public class DamkaBoard {
 		
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < n; j++) {
-					System.out.print("*");
-					if (j != n-1) {
-						System.out.print(" ");
+					if ((i+1) % 2 != 0) {
+						System.out.print("* ");
+					} else {
+						System.out.print(" *");
 					}
 			}
 			
 		System.out.println();
-		
-			if ((i+1) % 2 != 0) { // The * is first when the line number is odd. i starts in 0 so added +1
-				System.out.print(" ");
-			}
+	
 		}
 		
 	}
