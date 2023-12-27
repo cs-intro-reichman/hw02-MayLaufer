@@ -15,7 +15,7 @@ public class Reverse {
 		// if str.length-1 is odd - making sure the "first middle" char will be printed
 		int middleCharIndex = (int)(Math.floor((str.length() - 1)/ 2)); 
 		
-		System.out.println(str.charAt(middleCharIndex));
+		System.out.println("The middle character is " + str.charAt(middleCharIndex));
 	
 	}
 }
