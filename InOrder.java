@@ -4,6 +4,17 @@
  */
 public class InOrder {
 	public static void main (String[] args) {
-		//// Write your code here
+		
+		int num = (int)(Math.random() * 10);
+		int temp = 0; // will storage the old value of num
+		
+		do {
+			System.out.print(num + " ");
+			temp = num;
+			num = (int)(Math.random() * 10);
+		} 
+		
+		while (num >= temp);
+			
 	}
 }

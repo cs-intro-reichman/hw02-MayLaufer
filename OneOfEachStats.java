@@ -14,6 +14,7 @@ public class OneOfEachStats {
 		int seed = Integer.parseInt(args[1]);
 		// Initailizes a random numbers generator with the given seed value
         Random generator = new Random(seed);  
+		double probabilty = generator.nextDouble();
 		
 		//// In the previous version of this program, you used a statement like:
 		//// double rnd = Math.random();
@@ -24,6 +25,83 @@ public class OneOfEachStats {
 		//// just like you had in the previous version, except that the 
 		//// randomization will be based on the given seed.
 		//// This is the only change that you have to do in the program.
-		    
+		
+		double totalChildren = 0.0; // To calculate the avg later
+		
+		int twoChildrenFamilies = 0;
+		int threeChildrenFamilies = 0;
+		int fourAndMoreChildrenFamilies = 0;
+		int mostCommonNumberOFChildren = 0;
+		
+		boolean isGirl = true;
+		boolean comparison = true;
+		int childCountForOneFamily = 1; 
+			
+		for (int i = 0; i < T; i++) {
+		
+			if (probabilty >= 0.5) {
+				isGirl = true;
+			} else {
+				isGirl = false;
+			}
+			
+			comparison = isGirl;
+		
+			while (isGirl == comparison) { 
+			
+				probabilty = Math.random();
+			
+				if (probabilty >= 0.5) {
+					isGirl = true;
+				} else {
+					isGirl = false;
+				}
+			
+				childCountForOneFamily++;
+			
+			}
+			
+			totalChildren += childCountForOneFamily;
+			
+			if (childCountForOneFamily == 2) {
+				twoChildrenFamilies++;
+			} else if (childCountForOneFamily == 3) {
+				threeChildrenFamilies++;
+			} else if (childCountForOneFamily == 4) {
+				fourAndMoreChildrenFamilies++;
+			}
+				
+			childCountForOneFamily = 1; // Must initialized at the end of each test
+			
+		}
+		
+		double avgChildrenInAllFamilies = totalChildren / T;
+		System.out.println("Average: " + avgChildrenInAllFamilies + " children to get at least one of each gender.");
+		
+		System.out.println("Number of families with 2 children: " + twoChildrenFamilies);
+		
+		System.out.println("Number of families with 3 children: " + threeChildrenFamilies);
+		
+		System.out.println("Number of families with 4 or more children: " + fourAndMoreChildrenFamilies);
+		
+		String commonNumber; // Temp variable 
+		if (twoChildrenFamilies >= threeChildrenFamilies) {
+			if (twoChildrenFamilies >= fourAndMoreChildrenFamilies) {
+				commonNumber = "2";
+			} else { 
+				commonNumber = "4 or more";
+			}
+		} else {
+			if (threeChildrenFamilies >= fourAndMoreChildrenFamilies) {
+				commonNumber = "3";
+			} else {
+				commonNumber = "4 or more";
+			}
+		}
+	
+		System.out.println("The most common number of children is " + commonNumber + ". ");  
+
+		
 	}
 }
+		
