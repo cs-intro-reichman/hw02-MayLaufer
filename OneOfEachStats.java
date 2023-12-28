@@ -23,17 +23,17 @@ public class OneOfEachStats {
 		int mostCommonNumberOFChildren = 0;
 		
 		boolean isGirl = true;
-		boolean comparison = true;
+		boolean isBoy = true; 
 		int childCountForOneFamily = 0; 
 			
 		for (int i = 0; i < T; i++) {
 		
-			while (isGirl || comparison) { 
+			while (isGirl || isBoy) { 
 					
 				double probabilty = generator.nextDouble();
 				
 				if (probabilty > 0.5) {
-					comparison = false;
+					isBoy = false;
 				} else {
 					isGirl = false;
 				}
@@ -48,7 +48,7 @@ public class OneOfEachStats {
 				twoChildrenFamilies++;
 			} else if (childCountForOneFamily == 3) {
 				threeChildrenFamilies++;
-			} else if (childCountForOneFamily == 4) {
+			} else if (childCountForOneFamily >= 4) {
 				fourAndMoreChildrenFamilies++;
 			}
 				
