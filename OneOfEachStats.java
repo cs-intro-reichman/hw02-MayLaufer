@@ -39,7 +39,7 @@ public class OneOfEachStats {
 		
 			while (isGirl == comparison) { 
 			
-				probabilty = Math.random();
+				probabilty = generator.nextDouble();
 			
 				if (probabilty > 0.5) {
 					isGirl = true;
