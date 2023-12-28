@@ -14,7 +14,6 @@ public class OneOfEachStats {
 		int seed = Integer.parseInt(args[1]);
 		// Initailizes a random numbers generator with the given seed value
         Random generator = new Random(seed);  
-		double probabilty = generator.nextDouble();
 		
 		double totalChildren = 0.0; // To calculate the avg later
 		
@@ -29,20 +28,12 @@ public class OneOfEachStats {
 			
 		for (int i = 0; i < T; i++) {
 		
-			if (probabilty > 0.5) {
-				isGirl = true;
-			} else {
-				isGirl = false;
-			}
-			
-			comparison = isGirl;
-		
-			while (isGirl == comparison) { 
-			
-				probabilty = generator.nextDouble();
-			
+			while (isGirl || comparison) { 
+					
+				double probabilty = generator.nextDouble();
+				
 				if (probabilty > 0.5) {
-					isGirl = true;
+					comparison = false;
 				} else {
 					isGirl = false;
 				}
