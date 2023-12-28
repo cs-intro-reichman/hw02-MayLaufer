@@ -52,7 +52,7 @@ public class OneOfEachStats {
 				fourAndMoreChildrenFamilies++;
 			}
 				
-			childCountForOneFamily = 1; // Must initialized at the end of each test
+			childCountForOneFamily = 0; // Must initialized at the end of each test
 			
 		}
 		
