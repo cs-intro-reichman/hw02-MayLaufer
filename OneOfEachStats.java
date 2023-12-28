@@ -24,7 +24,7 @@ public class OneOfEachStats {
 		
 		boolean isGirl = true;
 		boolean comparison = true;
-		int childCountForOneFamily = 1; 
+		int childCountForOneFamily = 0; 
 			
 		for (int i = 0; i < T; i++) {
 		
