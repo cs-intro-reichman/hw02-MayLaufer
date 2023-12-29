@@ -12,8 +12,7 @@ public class OneOfEachStats {
 		// Gets the two command-line arguments
 		int T = Integer.parseInt(args[0]);
 		int seed = Integer.parseInt(args[1]);
-		// Initailizes a random numbers generator with the given seed value
-        Random generator = new Random(seed);  
+		// Initailizes a random numbers generator with the given seed value 
 		
 		double totalChildren = 0.0; // To calculate the avg later
 		
@@ -21,25 +20,32 @@ public class OneOfEachStats {
 		int threeChildrenFamilies = 0;
 		int fourAndMoreChildrenFamilies = 0;
 		int mostCommonNumberOFChildren = 0;
+		Random generator = new Random(seed); 
 		
 		boolean isGirl = true;
 		boolean isBoy = true; 
 		int childCountForOneFamily = 0; 
 			
 		for (int i = 0; i < T; i++) {
-		
+			
+			isBoy = true;
+			isGirl = true;
+				
 			while (isGirl || isBoy) { 
-					
+				
 				double probabilty = generator.nextDouble();
 				
-				if (probabilty > 0.5) {
+				if (probabilty >= 0.5) {
 					isBoy = false;
+					// System.out.print("g ");
 				} else {
 					isGirl = false;
+					// System.out.print("b ");
+					
 				}
-			
+				
 				childCountForOneFamily++;
-			
+				
 			}
 			
 			totalChildren += childCountForOneFamily;
